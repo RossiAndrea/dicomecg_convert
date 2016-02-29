@@ -56,7 +56,8 @@ class ECG(object):
         def wadoget(stu, ser, obj):
 
             payload = {'requestType': 'WADO', 'studyUID': stu,
-                       'seriesUID': ser, 'objectUID': obj}
+                       'seriesUID': ser, 'objectUID': obj,
+                       'contentType': 'application/dicom'}
             headers = {'content-type': 'application/json'}
 
             resp = requests.get(wadosrv, params=payload, headers=headers)
